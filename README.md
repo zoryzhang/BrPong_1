@@ -4,7 +4,7 @@ The following provides detail on how to work with the DORA model code provided i
 
 The first part provides details on how to run learning sims reported in Doumas, Puebla, Martin, and Hummel (Relation learning…). The second part provides details on more detailed interaction with the DORA model. 
 
-Part 1: Simulations
+# Part 1: Simulations
 
 All representation learning and generalisation uses files in the workspace folder. 
 
@@ -16,11 +16,11 @@ To simulate relation learning, open DORA.py. In the main menu, load the correct 
 
 The output of the save operation will create a json dump (in plain text) of the state of the DORA network. 
 
-Part 2: Working with the DORA network. 
+# Part 2: Working with the DORA network. 
 
 The workspace file has all the code necessary to use the basic DORA network. 
 
-The DORA main menu
+## The DORA main menu
 
 When you run DORA (by running the DORA.py file) you enter the main DORA menu. Your terminal window should now look something like this: 
 
@@ -69,7 +69,7 @@ Load (P)arameter file allows you to load a new parameter file. The default param
 
 (Q)uit will quit python DORA. Any unsaved memory states are lost. 
 
-DORA’s Run Menu
+## DORA’s Run Menu
 
 When you execute the (R)un option from the main menu, you enter DORA’s main run menu. Your terminal should look something like this: 
 
@@ -138,7 +138,7 @@ The following elaborates on the menu options.
 
 (V)iew network allows the user to view the network and network state in the terminal. Executing the (V)iew option will execute the view menu, which is elaborated below in the ‘DORA’s View Menu’ section. Note, the view network option in the terminal is a text based GUI and is separate from the DORA GUI that displays the network during runs. 
 
-View Network Menu
+## View Network Menu
 
 The View Network Menu allows the user to view the network at various levels of detail. Upon entering the View Network Menu, the terminal should display: 
 
@@ -168,7 +168,7 @@ Where RB_name is a variable giving the name of the RB (if one exists), predname 
 
 (B)ack will move the user up a menu level. 
 
-Creating Parameter Files
+## Creating Parameter Files
 
 A parameter file in DORA is a text file formatted as a dictionary data type (if you don’t know what that means, no worries). The basic format of a parameter file looks like: 
 
@@ -191,7 +191,7 @@ In order to change any of the parameter values, simply edit the parameter value 
 
 Alternately, if you’re feeling more adventurous, you can open the DORA.py text file (the file containing the main run code for DORA) and edit the default parameters directly. The default parameters are initialized beginning on line 23 of the file. 
 
-Creating and Interpreting Sim Files
+## Creating and Interpreting Sim Files
 
 Sim files specify the information necessary to build the DORA network. In the sim files units in T1 (PO units) are labeled as pred units or object units. These labels as well as names given to the units (and all other units) are for the purposes of making the sim files easier to read and to write. They are not used by the model during processing. 
 
@@ -234,7 +234,8 @@ You can also create sim files with propositions that are only single-place predi
 
 An example of propositions without P units: 
 
-symProps = [{'name': ‘non_exist’, 'RBs': [{'pred_name': 'lover', 'pred_sem': ['lover1', 'lover2', 'lover3'], 'higher_order': False, 'object_name': 'John', 'object_sem': ['john1', 'john2', 'john3'], 'P': 'nil'}, {'pred_name': 'beloved', 'pred_sem': ['beloved1', 'beloved2', 'beloved3'], 'higher_order': False, 'object_name': 'Mary', 'object_sem': ['mary1', 'mary2', 'mary3'], 'P': 'nil'}], 'set': 'driver', 'analog': 0}, 
+symProps = [
+{'name': ‘non_exist’, 'RBs': [{'pred_name': 'lover', 'pred_sem': ['lover1', 'lover2', 'lover3'], 'higher_order': False, 'object_name': 'John', 'object_sem': ['john1', 'john2', 'john3'], 'P': 'nil'}, {'pred_name': 'beloved', 'pred_sem': ['beloved1', 'beloved2', 'beloved3'], 'higher_order': False, 'object_name': 'Mary', 'object_sem': ['mary1', 'mary2', 'mary3'], 'P': 'nil'}], 'set': 'driver', 'analog': 0}, 
 
 {'name': ‘non_exist’, 'RBs': [{'pred_name': 'lover', 'pred_sem': ['lover1', 'lover2', 'lover3'], 'higher_order': False, 'object_name': 'John', 'object_sem': ['john1', 'john2', 'john3'], 'P': 'nil'}, {'pred_name': 'beloved', 'pred_sem': ['beloved1', 'beloved2', 'beloved3'], 'higher_order': False, 'object_name': 'Mary', 'object_sem': ['mary1', 'mary2', 'mary3'], 'P': 'nil'}], 'set': 'recipient', 'analog': 0}]
 
@@ -242,7 +243,8 @@ Notice that the slot for the P unit is filled with ‘non_exist’, indicating t
 
 An example of propositions without RB units: 
 
-symProps = [{'name': ‘non_exist’, 'RBs': [{'pred_name': ‘non_exist’, 'pred_sem': [], 'higher_order': False, 'object_name': 'John', 'object_sem': ['john1', 'john2', 'john3'], 'P': 'nil'}], 'set': 'driver', 'analog': 0}, 
+symProps = [
+{'name': ‘non_exist’, 'RBs': [{'pred_name': ‘non_exist’, 'pred_sem': [], 'higher_order': False, 'object_name': 'John', 'object_sem': ['john1', 'john2', 'john3'], 'P': 'nil'}], 'set': 'driver', 'analog': 0}, 
 
 {'name': 'non_exist', 'RBs': [{'pred_name': 'non_exist', 'pred_sem': [], 'higher_order': False, 'object_name': 'John2', 'object_sem': ['john1', 'john4', 'john5'], 'P': 'nil'}], 'set': 'recipient', 'analog': 0}]
 
